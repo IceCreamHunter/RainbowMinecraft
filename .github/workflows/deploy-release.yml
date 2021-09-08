@@ -1,0 +1,22 @@
+name: Create and Deploy Release Zip
+
+on:  
+  push:
+    tags:
+      - '*'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Zip Release
+        uses: TheDoctor0/zip-release@0.6.0
+        with:
+          filename: 'test-minecraft-plugin.zip'
+          path: '.'
+          directory: '../'
+          exclusions: '*.git*'
+      - name: Deploy Release
+        uses: ncipollo/release-action@v1.8.8
+        with:
+          artifacts: '../test-minecraft-plugin.zip'
