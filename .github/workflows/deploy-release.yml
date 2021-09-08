@@ -13,10 +13,8 @@ jobs:
         uses: TheDoctor0/zip-release@0.6.0
         with:
           filename: 'RainbowMinecraft.zip'
-          path: '.'
-          directory: '../'
           exclusions: '*.git*'
       - name: Deploy Release
         uses: ncipollo/release-action@v1.8.8
         with:
-          artifacts: '../RainbowMinecraft.zip'
+          artifacts: 'RainbowMinecraft.zip'
