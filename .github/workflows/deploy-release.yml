@@ -12,11 +12,11 @@ jobs:
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.6.0
         with:
-          filename: 'test-minecraft-plugin.zip'
+          filename: 'RainbowMinecraft.zip'
           path: '.'
           directory: '../'
           exclusions: '*.git*'
       - name: Deploy Release
         uses: ncipollo/release-action@v1.8.8
         with:
-          artifacts: '../test-minecraft-plugin.zip'
+          artifacts: '../RainbowMinecraft.zip'
